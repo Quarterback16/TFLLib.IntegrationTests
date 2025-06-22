@@ -29,7 +29,7 @@ namespace TFLLib.IntegrationTests
 		[TestMethod]
 		public void DataLibrarian_GetAllGames_ReturnsGames()
 		{
-			var result = Sut.GetAllGames(season: 2018);
+			var result = Sut.GetAllGames(season: 2000);
 			Assert.IsTrue(result.Tables["SCHED"].Rows.Count > 0);
 		}
 	}
