@@ -103,6 +103,7 @@
   <ItemGroup>
     <Compile Include="DataLibrarianIntegrationTests.cs" />
     <Compile Include="IntegrationTestsBase.cs" />
+    <Compile Include="SeasonTests.cs" />
     <Compile Include="ServeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestLogger.cs" />
