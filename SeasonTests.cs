@@ -16,7 +16,7 @@ namespace TFLLib.IntegrationTests
         }
 
         [TestMethod]
-        public void TestNextSunday()
+        public void TestSeasonStartDate()
         {
             var result = Sut.GetSeasonStartDate("2025");
             Assert.AreEqual(
@@ -24,23 +24,13 @@ namespace TFLLib.IntegrationTests
                 result);  
         }
 
-        public static string NflConnectionString()
+        [TestMethod]
+        public void UnitRatingsReturnsRatingForStartOfYear()
         {
-            var connections = ConfigurationManager.ConnectionStrings;
-            var connStr = connections["NflConnectionString"].ConnectionString;
-            return connStr;
+            var ds = Sut.GetUnitRatings(
+                new DateTime(2025, 9, 4, 0, 0, 0, DateTimeKind.Unspecified));
+            Assert.IsTrue(ds.Tables[0].Rows.Count > 0);
         }
 
-        public static string TflConnectionString()
-        {
-            var connections = ConfigurationManager.ConnectionStrings;
-            return connections["TflConnectionString"].ConnectionString;
-        }
-
-        public static string CtlConnectionString()
-        {
-            var connections = ConfigurationManager.ConnectionStrings;
-            return connections["CtlConnectionString"].ConnectionString;
-        }
     }
 }
