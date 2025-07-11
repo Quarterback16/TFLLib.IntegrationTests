@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Configuration;
+using TFLLib.Helpers;
 
 namespace TFLLib.IntegrationTests
 {
@@ -12,7 +13,8 @@ namespace TFLLib.IntegrationTests
         [TestInitialize]
         public void Setup()
         {
-            Sut = new DataLibrarian("D");
+            var drive = DriveHelper.DriveLetter();
+            Sut = new DataLibrarian(drive);
         }
 
         [TestMethod]
