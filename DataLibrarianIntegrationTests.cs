@@ -16,6 +16,7 @@ namespace TFLLib.IntegrationTests
 		{
 			Assert.IsNotNull(Sut);
 			Assert.IsTrue(Sut.UseCache);
+			Assert.IsTrue(Sut.IsCacheEnabled);
 		}
 
 		[TestMethod]
