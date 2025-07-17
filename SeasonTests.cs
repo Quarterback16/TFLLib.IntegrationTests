@@ -34,5 +34,14 @@ namespace TFLLib.IntegrationTests
             Assert.IsTrue(ds.Tables[0].Rows.Count > 0);
         }
 
+        [TestMethod]
+        public void GetLastRegularSeasonGamesUsesCache()
+        {
+            var ds = Sut.GetAllRegularSeasonGames(
+                "SF",
+                "2025");
+            Assert.IsTrue(ds.Tables[0].Rows.Count == 17);
+        }
+
     }
 }
