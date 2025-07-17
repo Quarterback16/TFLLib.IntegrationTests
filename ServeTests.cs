@@ -17,7 +17,9 @@ namespace TFLLib.IntegrationTests
 		{
 			var result = Sut.LastContract("MONTJO01");
 			Assert.AreEqual(
-				expected: new DateTime(1993, 4, 26), 
+				expected: new DateTime(
+					1993, 4, 26,
+					0, 0, 0, DateTimeKind.Unspecified ), 
 				actual: result);
 		}
 	}
