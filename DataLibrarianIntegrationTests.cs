@@ -33,5 +33,20 @@ namespace TFLLib.IntegrationTests
 			var result = Sut.GetAllGames(season: 2000);
 			Assert.IsTrue(result.Tables["SCHED"].Rows.Count > 0);
 		}
+
+		[TestMethod]
+		public void DataLibrarian_GetWeekRecord_ReturnsSuperbowlWeek()
+		{
+			var result = Sut.GetWeekRecord(
+				new System.DateTime(
+					2026,
+					2,
+					1,
+					0,
+					0,
+					0,
+					System.DateTimeKind.Unspecified));
+			Assert.IsNotNull(result);
+		}
 	}
 }
