@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace TFLLib.IntegrationTests
 {
@@ -47,6 +48,20 @@ namespace TFLLib.IntegrationTests
 					0,
 					System.DateTimeKind.Unspecified));
 			Assert.IsNotNull(result);
+		}
+
+		[TestMethod]
+		public void DataLibrarian_GetCurrentPlayers_ReturnsKicker()
+		{
+			var ds = Sut.GetCurrentPlayers(
+				teamCode: "NE",
+				strCat: "4",
+				sPos: "PK",
+				role: "S");
+			Assert.IsNotNull(ds);
+			Assert.IsTrue(ds.Tables["PLAYER"].Rows.Count > 0);
+			Console.WriteLine(
+				ds.Tables["PLAYER"].Rows[0][0].ToString());
 		}
 	}
 }
