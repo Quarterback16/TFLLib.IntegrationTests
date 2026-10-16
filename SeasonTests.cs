@@ -20,9 +20,17 @@ namespace TFLLib.IntegrationTests
 		[TestMethod]
 		public void TestSeasonStartDate()
 		{
-			var result = Sut.GetSeasonStartDate("2025");
+			var result = Sut.GetSeasonStartDate(
+				"2026");
 			Assert.AreEqual(
-				new DateTime(2025, 9, 4, 0, 0, 0, DateTimeKind.Unspecified), 
+				new DateTime(
+					2026, 
+					9, 
+					9, 
+					0, 
+					0, 
+					0, 
+					DateTimeKind.Unspecified), 
 				result);  
 		}
 
